@@ -1,0 +1,8 @@
+<div class="slide slide-7 partial-slide">
+    <div ng-click="switchPartial($event)">
+        <h1>Routing</h1>
+    </div>
+    <hr>
+    <ng-include src=" 'views/partials/slide-7-routing.html' " ng-if="showPartial === 1" ng-controller="Slide7RoutingController"></ng-include>
+    <ng-include src=" 'views/partials/slide-7-routing-code.html' " ng-if="showPartial === 2"></ng-include>
+</div>

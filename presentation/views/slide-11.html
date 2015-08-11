@@ -1,0 +1,35 @@
+<div class="slide slide-11">
+    <h2>Putting a Service, Controller and Template together</h2>
+    <hr>
+    <br>
+    <div class="example-slide">
+        <div class="left">
+            <div class="left">
+                <h2>Users</h2>
+                <ul ng-if="users.length > 0">
+                    <li ng-repeat="user in users track by user.id"><a ng-click="getUser(user.id)">({{user.id}})&nbsp;{{user.name}}</a></li>
+                </ul>
+                <div class="no-users" ng-if="users.length === 0">No users</div>
+            </div>
+            <div class="right">
+                <form name="userFrm" class="user-form" ng-submit="addUser()">
+                    <div class="user-data">
+                        <h4>ID:&nbsp;</h4>
+                        <input name="id" ng-model="user.id" required>
+                    </div>
+                    <div class="user-data">
+                        <h4>Name:&nbsp;</h4>
+                        <input name="name" ng-model="user.name" required>
+                    </div>
+                    <button type="submit" ng-disabled="userFrm.$error.required">Add User</button>
+                </form>
+            </div>
+        </div>
+        <div class="right code-container">
+            <pre>
+                <div hljs language="javascript" source="serviceTestCode" class="code"></div>
+            </pre>
+        </div>
+        <textarea ng-model="log"></textarea>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="slide slide-12 partial-slide">
+    <div ng-click="switchPartial($event)">
+        <h1>AJAX calls using $http and $resource</h1>
+    </div>
+    <hr>
+    <ng-include src=" 'views/partials/slide-12-http.html' " ng-if="showPartial === 1" ng-controller="Slide12HTTPController"></ng-include>
+    <ng-include src=" 'views/partials/slide-12-http-code.html' " ng-if="showPartial === 2"></ng-include>
+    <ng-include src=" 'views/partials/slide-12-resource.html' " ng-if="showPartial === 3" ng-controller="Slide12ResourceController"></ng-include>
+    <ng-include src=" 'views/partials/slide-12-resource-code.html' " ng-if="showPartial === 4"></ng-include>
+</div>

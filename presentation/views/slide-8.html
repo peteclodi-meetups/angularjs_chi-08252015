@@ -1,0 +1,10 @@
+<div class="slide slide-8 partial-slide">
+    <div ng-click="switchPartial($event)">
+        <h1>Controllers and their Templates</h1>
+    </div>
+    <hr>
+    <ng-include src=" 'views/partials/slide-8-controller.html' " ng-if="showPartial === 1" ng-controller="Slide8ControllerController"></ng-include>
+    <ng-include src=" 'views/partials/slide-8-controller-code.html' " ng-if="showPartial === 2"></ng-include>
+    <ng-include src=" 'views/partials/slide-8-template.html' " ng-if="showPartial === 3" ng-controller="Slide8TemplateController"></ng-include>
+    <ng-include src=" 'views/partials/slide-8-template-code.html' " ng-if="showPartial === 4"></ng-include>
+</div>

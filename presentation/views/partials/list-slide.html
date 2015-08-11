@@ -1,0 +1,8 @@
+<ul>
+    <li class="animated" ng-repeat="listItem in listItems track by listItem.id">
+        <h2><span ng-if="listItem.image"><img class="list-image" src="{{listItem.image}}">&nbsp;</span>{{listItem.text}}</h2>
+        <ul ng-if="listItem.subItem">
+            <li><h3>{{listItem.subItem.text}}</h3></li>
+        </ul>
+    </li>
+</ul>
