@@ -1,0 +1,25 @@
+{
+  "name": "ng08252015.api.meetups.local",
+  "version": "1.0.0",
+  "description": "The API Test Server for the 8/25/2015 AngularJS Chicago Meetup Presentation Demo App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peteclodi-meetups/angularjs_chi-08252015"
+  },
+  "author": "Pete Clodi <pete.clodi+gh-meetups@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peteclodi-meetups/angularjs_chi-08252015/issues"
+  },
+  "homepage": "https://github.com/peteclodi-meetups/angularjs_chi-08252015",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "mongodb": "^2.0.40"
+  }
+}
