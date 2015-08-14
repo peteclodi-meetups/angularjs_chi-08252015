@@ -1,0 +1,16 @@
+<section class="all-users">
+    <h1>All Users</h1>
+    <div class="users-list">
+        <div class="header-row">
+            <input type="checkbox" ng-model="selectAll" ng-click="toggleSelectAll()" title="{{selectAll ? 'Select None' : 'Select All'}}">
+            <span>Name</span>
+            <span>Are they Awesome?</span>
+        </div>
+        <div class="user-row" ng-repeat="user in users track by user._id">
+            <input type="checkbox" ng-click="toggleUserSelection()" ng-model="user.selected">
+            <span>{{user | FullName}}</span>
+            <span>{{user.isAwesome ? 'Hell Yeah!' : 'Naw'}}</span>
+            <a ng-click="editUser(user)">edit</a>
+        </div>
+    </div>
+</section>

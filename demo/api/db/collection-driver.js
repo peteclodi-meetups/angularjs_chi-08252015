@@ -21,7 +21,7 @@ CollectionDriver.prototype.findAll = function (collectionName, callback) {
 
 CollectionDriver.prototype.get = function (collectionName, id, callback) { //A
     var collection = this.db.collection(collectionName);
-    collection.find({_id: new ObjectId(id)}).limit(1).next(function(err, doc) {
+    collection.findOne({_id: new ObjectId(id)}, function(err, doc) {
         if(err) {
             callback(null, err);
             return;
@@ -45,6 +45,7 @@ CollectionDriver.prototype.save = function (collectionName, obj, callback) {
 //update a specific object
 CollectionDriver.prototype.update = function (collectionName, id, newData, callback) {
     var collection = this.db.collection(collectionName);
+    delete newData._id;
     collection.findOneAndUpdate({_id: new ObjectId(id)}, { $set: newData }, { returnOriginal: false }, function(err, result) {
         if(err) {
             callback(null, err);

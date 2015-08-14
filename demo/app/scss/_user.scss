@@ -1,0 +1,36 @@
+.add-user {
+    align-items: center;
+    justify-content: center;
+
+    .error-message {
+        background-color: rgba(255, 0, 0, .5);
+        border: solid #8b0000 1px;
+        border-radius: 5px;
+        color: #fff;
+        padding: 20px;
+    }
+
+    label {
+        display: block;
+
+        input[type="text"] {
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        input[type="radio"] {
+            &:last-of-type {
+                margin-left: 10px;
+            }
+            margin-right: 10px;
+        }
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+        margin-top: 15px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        width: 100%;
+    }
+}

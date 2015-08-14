@@ -45,7 +45,7 @@ router.post('/', function (req, res) {
             res.status(400).send(err);
         }
         else {
-            res.status(201).send({new_user: object});
+            res.status(201).send(object);
         }
     });
 });

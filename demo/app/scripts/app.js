@@ -8,19 +8,8 @@
  *
  * Main module of the application.
  */
-angular
-  .module('demoApp', [
+angular.module('demoApp', [
     'ngRoute',
+    'ngResource',
     'ngSanitize'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+]);

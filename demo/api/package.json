@@ -4,7 +4,7 @@
   "description": "The API Test Server for the 8/25/2015 AngularJS Chicago Meetup Presentation Demo App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
