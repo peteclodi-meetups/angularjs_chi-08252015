@@ -14,14 +14,16 @@ module.exports = function (grunt) {
 
     // Automatically load required Grunt tasks
     require('jit-grunt')(grunt, {
-        useminPrepare: 'grunt-usemin'
+        useminPrepare: 'grunt-usemin',
+        protractor: 'grunt-protractor-runner'
     });
 
     // Configurable paths for the application
     var appConfig = {
         app: require('./bower.json').appPath || '.',
         assets: 'assets',
-        testAssets: 'assetsTest'
+        testAssets: 'assetsTest',
+        e2eAssets: 'assetsE2E'
     };
 
     // Define the configuration for all the tasks
@@ -117,7 +119,8 @@ module.exports = function (grunt) {
         // Empties folders to start fresh
         clean: {
             app: '<%= yeoman.assets %>',
-            test: '<%= yeoman.testAssets %>'
+            test: '<%= yeoman.testAssets %>',
+            e2e: '<%= yeoman.e2eAssets %>'
         },
 
         // Add vendor prefixed styles
@@ -145,6 +148,17 @@ module.exports = function (grunt) {
                     cwd: '<%= yeoman.testAssets %>/css/',
                     src: '**/*.css',
                     dest: '<%= yeoman.testAssets %>/css/'
+                }]
+            },
+            e2e: {
+                options: {
+                    map: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.e2eAssets %>/css/',
+                    src: '**/*.css',
+                    dest: '<%= yeoman.e2eAssets %>/css/'
                 }]
             }
         },
@@ -210,6 +224,16 @@ module.exports = function (grunt) {
                     'cwd': '<%= yeoman.app %>',
                     'src': ['scss/*.scss'],
                     'dest': '<%= yeoman.testAssets %>/css',
+                    'ext': '.css',
+                    'flatten': true
+                }]
+            },
+            e2e: {
+                files: [{
+                    'expand': true,
+                    'cwd': '<%= yeoman.app %>',
+                    'src': ['scss/*.scss'],
+                    'dest': '<%= yeoman.e2eAssets %>/css',
                     'ext': '.css',
                     'flatten': true
                 }]
@@ -425,6 +449,24 @@ module.exports = function (grunt) {
                         ]
                     }
                 ]
+            },
+            e2e: {
+                files: [
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.app %>',
+                        dest: '<%= yeoman.e2eAssets %>',
+                        src: [
+                            '*.{ico,png,txt}',
+                            '*.html',
+                            'img/**/*.{png,jpg,jpeg,gif,svg,webp}',
+                            'scripts/**/*.js',
+                            'views/**/*.html',
+                            'bower_components/**'
+                        ]
+                    }
+                ]
             }
         },
 
@@ -450,6 +492,34 @@ module.exports = function (grunt) {
                 configFile: './karma.conf.js',
                 singleRun: true
             }
+        },
+
+        protractor: {
+            options: {
+                configFile: 'protractor.conf.js', // Default config file
+                noColor: false, // If true, protractor will not use colors in its output.
+                keepAlive: true // If false, the grunt process stops when the test fails.
+            },
+            app: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
+                options: {
+                    args: {
+                    } // Target-specific arguments
+                }
+            },
+            dev: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
+                options: {
+                    args: {
+                        params: { env: 'dev' }
+                    } // Target-specific arguments
+                }
+            },
+            prod: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
+                options: {
+                    args: {
+                        params: { env: 'prod' }
+                    } // Target-specific arguments
+                }
+            }
         }
     });
     grunt.registerTask('test-ci', [
@@ -470,6 +540,15 @@ module.exports = function (grunt) {
         'karma:unit'
     ]);
 
+    grunt.registerTask('e2e', 'Run E2E testing on our stuff', function(env) {
+        grunt.task.run(['clean:e2e', 'sass:e2e', 'autoprefixer:e2e', 'copy:e2e']);
+        if(arguments.length === 0) {
+            grunt.task.run('protractor:app');
+        }
+        else {
+            grunt.task.run('protractor:' + env);
+        }
+    });
 
     grunt.registerTask('dev', [
         'clean:app',
