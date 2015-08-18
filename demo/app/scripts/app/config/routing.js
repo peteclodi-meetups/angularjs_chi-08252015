@@ -16,7 +16,8 @@ angular.module('demoApp')
             })
             .when(RoutePaths.user + '/:id?', {
                 templateUrl: 'views/user.html',
-                controller: 'UserController'
+                controller: 'UserController',
+                controllerAs: 'UserCtrl'
             })
             .otherwise({
                 redirectTo: RoutePaths.users

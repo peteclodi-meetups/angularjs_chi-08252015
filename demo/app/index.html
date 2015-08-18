@@ -19,7 +19,7 @@
         <!-- endbuild -->
     </head>
     <body ng-app="demoApp" ng-strict-di>
-        <header>
+        <header brand-name="Pete Clodi's DemoApp">
             <a ng-class="{active: activeRoute === routePaths.users}" ng-href="{{routePaths.users}}">All Users</a>
             <a ng-class="{active: activeRoute === routePaths.user}" ng-href="{{routePaths.user}}">User</a>
         </header>
@@ -52,6 +52,7 @@
 
         <script src="scripts/filters/full-name.js"></script>
 
+        <script src="scripts/services/user-deletion-processor.js"></script>
         <script src="scripts/services/users.js"></script>
         <!-- endbuild -->
     </body>

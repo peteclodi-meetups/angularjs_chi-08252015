@@ -56,12 +56,18 @@
             }
 
             a {
-                color: #0000ff;
+                color: #00f;
                 cursor: pointer;
                 flex-basis: 100px;
                 flex-grow: 2;
                 padding-left: 10px;
             }
+        }
+
+        button {
+            align-self: flex-start;
+            margin-top: 20px;
+            width: 45%;
         }
     }
 }

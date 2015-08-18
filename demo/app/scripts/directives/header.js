@@ -11,7 +11,9 @@ angular.module('demoApp')
     .directive('header', [function () {
         return {
             restrict: 'E',
-            scope: true,
+            scope: {
+                brandName: '@'
+            },
             templateUrl: 'views/directives/header.html',
             transclude: true
         };

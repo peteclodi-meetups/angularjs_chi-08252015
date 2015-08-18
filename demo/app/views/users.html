@@ -7,10 +7,11 @@
             <span>Are they Awesome?</span>
         </div>
         <div class="user-row" ng-repeat="user in users track by user._id">
-            <input type="checkbox" ng-click="toggleUserSelection()" ng-model="user.selected">
+            <input type="checkbox" ng-click="userSelectionToggled()" ng-model="user.selected">
             <span>{{user | FullName}}</span>
             <span>{{user.isAwesome ? 'Hell Yeah!' : 'Naw'}}</span>
             <a ng-click="editUser(user)">edit</a>
         </div>
+        <button ng-click="deleteSelectedUsers()" ng-disabled="!anySelected">Delete Selected Users</button>
     </div>
 </section>

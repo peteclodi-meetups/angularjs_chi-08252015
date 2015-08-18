@@ -27,7 +27,7 @@ CollectionDriver.prototype.get = function (collectionName, id, callback) { //A
             return;
         }
         callback(doc);
-    });
+    });/var/www/meetups/angularjs_chi-08252015
 };
 
 //save new object

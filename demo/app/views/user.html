@@ -1,22 +1,22 @@
 <section class="add-user">
-    <h2 class="error-message" ng-if="errorMessage">{{errorMessage}}</h2>
+    <h2 class="error-message" ng-if="UserCtrl.errorMessage">{{UserCtrl.errorMessage}}</h2>
 
     <h2>Enter the User's Information</h2>
-    <form name="userFrm" ng-submit="addUser()">
+    <form name="userFrm" ng-submit="UserCtrl.submitUser()">
         <label>
             <h3>First Name</h3>
-            <input type="text" ng-model="user.firstName">
+            <input type="text" ng-model="UserCtrl.user.firstName" autofocus>
         </label>
         <label>
             <h3>Last Name</h3>
-            <input type="text" ng-model="user.lastName">
+            <input type="text" ng-model="UserCtrl.user.lastName">
         </label>
         <label>
             <h3>Are they Awesome?</h3>
-            <input type="radio" ng-model="user.isAwesome" ng-value="booleanValues.true">Yes
-            <input type="radio" ng-model="user.isAwesome" ng-value="booleanValues.false">No
+            <input type="radio" ng-model="UserCtrl.user.isAwesome" ng-value="booleanValues.true">Yes
+            <input type="radio" ng-model="UserCtrl.user.isAwesome" ng-value="booleanValues.false">No
         </label>
 
-        <button type="submit">{{isUpdate ? "Update User" : "Add User"}}</button>
+        <button type="submit">{{UserCtrl.isUpdate ? "Update User" : "Add User"}}</button>
     </form>
 </section>

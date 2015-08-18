@@ -8,32 +8,33 @@
  * Controller of the demoApp
  */
 angular.module('demoApp')
-    .controller('UserController', ['$scope', '$routeParams', '$location', 'Users', function ($scope, $routeParams, $location, Users) {
+    .controller('UserController', ['$rootScope', '$routeParams', '$location', 'Users', function ($rootScope, $routeParams, $location, Users) {
         if(angular.isDefined($routeParams.id)) {
-            $scope.user = Users.get({userId: $routeParams.id});
-            $scope.isUpdate = true;
+            this.user = Users.get({userId: $routeParams.id});
+            this.isUpdate = true;
         }
         else {
-            $scope.user = {
+            this.user = {
                 isAwesome: true
             };
-            $scope.isUpdate = false;
+            this.isUpdate = false;
         }
 
-        $scope.addUser = function() {
-            if($scope.isUpdate) {
-                $scope.user.$update({userId: $scope.user._id}, function(user) {
-                    $location.url($scope.$root.routePaths.users);
+        this.submitUser = function() {
+            var self = this;
+            if(this.isUpdate) {
+                return this.user.$update({userId: this.user._id}, function(user) {
+                    $location.url($rootScope.routePaths.users);
                 }, function() {
-                    $scope.errorMessage = 'Unable to Update the User';
-                });
+                    self.errorMessage = 'Unable to Update the User';
+                }).$promise;
             }
             else {
-                Users.save($scope.user, function(user) {
-                    $location.url($scope.$root.routePaths.users);
+                return Users.save(this.user, function(user) {
+                    $location.url($rootScope.routePaths.users);
                 }, function() {
-                    $scope.errorMessage = 'Unable to Add the New User';
-                });
+                    self.errorMessage = 'Unable to Add the New User';
+                }).$promise;
             }
         };
     }]);
