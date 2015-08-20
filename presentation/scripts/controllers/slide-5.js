@@ -12,8 +12,16 @@ angular.module('angular1xApp')
         $controller('ListSlideController', {$scope: $scope});
 
         $scope.listItemsCache = [
-            {id: 0, text: "When 'injected' a 'thing' is searched for in the module's cache and instantiated if necessary"},
-            {id: 1, text: "All 'things' must be registered with the angular.module", subItem: {text: "angular.module('demoApp', [...]).factory('demoFactory').service('demoService').controller('demoController')"}}
+            {id: 0, text: 'Protractor', image: '/img/logos/protractor.png',
+                subItems: [
+                    {id: 0, text: 'Framework extension that adds AngularJS specific locators'}
+                ]
+            },
+            {id: 1, text: 'Jasmine', image: '/img/logos/jasmine.png'}
         ];
-        $scope.listItems = [{id: 2, text: "It's Magic!!!", subItem: {text: "Just kidding, it's only mapping and caching"}}];
+        $scope.listItems = [{id: 2, text: 'Karma', image: '/img/logos/karma.png',
+            subItems: [
+                {id: 0, text: 'Runs the tests in the various browsers'}
+            ]
+        }];
     }]);

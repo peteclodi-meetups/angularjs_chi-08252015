@@ -12,8 +12,8 @@ angular.module('angular1xApp')
         $controller('ListSlideController', {$scope: $scope});
 
         $scope.listItemsCache = [
-            {id: 0, text: "Provides methods and properties for configuring the service it creates, before the app starts", subItem: {text: "$routeProvider.when(...)"}},
-            {id: 1, text: "Is named after the service with Provider tacked on to the end", subItem: {text: "$routeProvider, $logProvider, ..."}}
+            {id: 0, text: "Provides methods and properties for configuring the service it creates, before the app starts", subItems: [{id: 0, text: "$routeProvider.when(...)"}] },
+            {id: 1, text: "Is named after the service with Provider tacked on to the end", subItems: [{id: 0, text: "$routeProvider, $logProvider, ..."}] }
         ];
         $scope.listItems = [{id: 2, text: "Allows you to configure the 'Real workhorse of AngularJS apps'"}];
     }]);

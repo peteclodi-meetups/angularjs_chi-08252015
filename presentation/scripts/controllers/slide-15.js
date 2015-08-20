@@ -12,8 +12,8 @@ angular.module('angular1xApp')
         $controller('ListSlideController', {$scope: $scope});
 
         $scope.listItemsCache = [
-            {id: 0, text: "It won't blow up your world!!!", subItem: {text: "Learn more at http://angular.io"}},
-            {id: 1, text: "Backwards compatible with Angular 1.x", subItem: {text: "Most of the compatibility will appear in 1.4"}},
+            {id: 0, text: "It won't blow up your world!!!", subItems: [{id: 0, text: "Learn more at http://angular.io"}] },
+            {id: 1, text: "Backwards compatible with Angular 1.x", subItems: [{id: 0, text: "Most of the compatibility will appear in 1.4"}] },
             {id: 2, text: "Built upon components"},
             {id: 3, text: "Built to take advantage of ES6"}
         ];

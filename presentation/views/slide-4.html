@@ -1,11 +1,5 @@
-<div class="slide slide-4 partial-slide">
-    <div ng-click="switchPartial($event)">
-        <h1>angular.module methods</h1>
-        <h2>config and run</h2>
-    </div>
+<div class="slide slide-4 list-slide" ng-click="addItems()">
+    <h1>Enough about the User, how does a Developer test?</h1>
     <hr>
-    <ng-include src=" 'views/partials/slide-4-config.html' " ng-if="showPartial === 1" ng-controller="Slide4ConfigController"></ng-include>
-    <ng-include src=" 'views/partials/slide-4-config-code.html' " ng-if="showPartial === 2"></ng-include>
-    <ng-include src=" 'views/partials/slide-4-run.html' " ng-if="showPartial === 3" ng-controller="Slide4RunController"></ng-include>
-    <ng-include src=" 'views/partials/slide-4-run-code.html' " ng-if="showPartial === 4"></ng-include>
+    <ng-include src=" 'views/partials/list-slide.html' "></ng-include>
 </div>

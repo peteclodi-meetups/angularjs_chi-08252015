@@ -13,7 +13,7 @@ angular.module('angular1xApp')
 
         $scope.listItemsCache = [
             {id: 0, text: "Contains the business logic of your application"},
-            {id: 1, text: "Is a Singleton", subItem: {text: "typically"}}
+            {id: 1, text: "Is a Singleton", subItems: [{id: 0, text: "typically"}] }
         ];
         $scope.listItems = [{id: 2, text: "The real workhorse of AngularJS apps"}];
     }]);

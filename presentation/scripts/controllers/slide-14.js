@@ -12,10 +12,10 @@ angular.module('angular1xApp')
         $controller('ListSlideController', {$scope: $scope});
 
         $scope.listItemsCache = [
-            {id: 0, text: "Gulp", image: "images/logos/gulp.png", subItem: {text: "http://gulpjs.com"}},
-            {id: 1, text: "Grunt", image: "images/logos/grunt.png", subItem: {text: "http://gruntjs.com"}},
-            {id: 2, text: "Bower", image: "images/logos/bower.png", subItem: {text: "http://bower.io"}},
-            {id: 3, text: "NPM", subItem: {text: "http://npmjs.com"}}
+            {id: 0, text: "Gulp", image: "images/logos/gulp.png", subItems: [{id: 0, text: "http://gulpjs.com"}] },
+            {id: 1, text: "Grunt", image: "images/logos/grunt.png", subItems: [{id: 0, text: "http://gruntjs.com"}] },
+            {id: 2, text: "Bower", image: "images/logos/bower.png", subItems: [{id: 0, text: "http://bower.io"}] },
+            {id: 3, text: "NPM", subItems: [{id: 0, text: "http://npmjs.com"}] }
         ];
-        $scope.listItems = [{id: 4, text: "Yeoman", image: "images/logos/yeoman.png", subItem: {text: "http://yeoman.io"}}];
+        $scope.listItems = [{id: 4, text: "Yeoman", image: "images/logos/yeoman.png", subItems: [{id: 0, text: "http://yeoman.io"}] }];
     }]);

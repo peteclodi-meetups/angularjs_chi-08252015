@@ -12,9 +12,9 @@ angular.module('angular1xApp')
         $controller('ListSlideController', {$scope: $scope});
 
         $scope.listItemsCache = [
-            {id: 0, text: "angular.module('demoApp', [...])"},
-            {id: 1, text: "angular.bootstrap (manual bootstrapping)", subItem: {text: "angular.bootstrap(any, ['demoApp'])"} },
-            {id: 2, text: "ng-app directive (auto-bootstrapping)", subItem: {text: "<any ng-app='demoApp'>...</any>"} }
+            {id: 0, text: "Repeat for every iteration of the codebase", image: "img/sad.jpg"},
+            {id: 1, text: "Note any bugs" },
+            {id: 2, text: "Do stuff!!!" }
         ];
-        $scope.listItems = [{id: 3, text: "Bootstrapping (Auto vs. Manual)"}];
+        $scope.listItems = [{id: 3, text: "Launch your App in a browser"}];
     }]);

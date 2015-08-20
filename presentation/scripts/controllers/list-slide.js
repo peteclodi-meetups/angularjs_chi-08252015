@@ -12,6 +12,9 @@ angular.module('angular1xApp')
         $scope.addItems = function() {
             if($scope.listItemsCache.length > 0) {
                 $scope.listItems.push($scope.listItemsCache.pop());
+                if($scope.listItemsCache.length === 0) {
+                    $scope.$root.$broadcast($scope.$root.events.focusNextPage);
+                }
             }
         };
     }]);

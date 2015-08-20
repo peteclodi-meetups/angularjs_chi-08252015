@@ -17,19 +17,31 @@ angular.module('angular1xApp')
             },
             templateUrl: '../../views/directives/paging.html',
             link: function(scope) {
+                function navigateToPage(pageNumber) {
+                    sessionStorage.currentPage = pageNumber;
+                    scope.highlightNextPage = false;
+                    $location.url('/' + pageNumber);
+                }
+
                 scope.currentPage = sessionStorage.currentPage ? parseInt(sessionStorage.currentPage) : 0;
                 scope.prevPage = function() {
                     if(scope.currentPage > 0) {
-                        sessionStorage.currentPage = --scope.currentPage;
-                        $location.url('/' + scope.currentPage);
+                        navigateToPage(--scope.currentPage);
                     }
                 };
                 scope.nextPage = function() {
                     if(scope.currentPage < parseInt(scope.maxPageIndex)) {
-                        sessionStorage.currentPage = ++scope.currentPage;
-                        $location.url('/' + scope.currentPage);
+                        navigateToPage(++scope.currentPage);
                     }
                 };
+
+                scope.$on(scope.$root.events.focusNextPage, function() {
+                    scope.highlightNextPage = true;
+                });
+
+                scope.$on(scope.$root.events.unfocusNextPage, function() {
+                    scope.highlightNextPage = false;
+                });
             }
         };
     }]);

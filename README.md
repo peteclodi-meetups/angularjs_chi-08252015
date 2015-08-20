@@ -16,8 +16,11 @@ Presented on 8/25/2015
   - Karma (runner)
   - Jasmine (testing framework)
   - Protractor (E2E Testing)
- - Tools I'm Not Using
+ - Tools I'm Not Using (similar to Jasmine)
   - Mocha (framework), Sinon (assertion library), Chai (assertion library)
+ - Configuring Karma
+
+
  - Unit Testing
   - controllers
     - synchronous $scope methods

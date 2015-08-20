@@ -12,9 +12,9 @@ angular.module('angular1xApp')
         $controller('ListSlideController', {$scope: $scope});
 
         $scope.listItemsCache = [
-            {id: 0, text: '42'},
-            {id: 1, text: 'Because it\'s easy until it\'s not'},
-            {id: 2, text: 'Because reading a tutorial can only get you so far'}
+            {id: 0, text: 'Because a handful of Unit Tests does not a Test Suite make'},
+            {id: 1, text: 'Because you\'ve probably not had a chance to implement it yourself'},
+            {id: 2, text: 'Because every organization loves testing...until they have to pay for it'}
         ];
-        $scope.listItems = [{id: 3, text: 'Because AngularJS is not the only framework around'}];
+        $scope.listItems = [{id: 3, text: 'Manual Testing...UGH!', subItems: [{id: 0, text: 'I know, right!?'}] }];
     }]);

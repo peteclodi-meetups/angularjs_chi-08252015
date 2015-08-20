@@ -9,61 +9,66 @@
  */
 angular.module('angular1xApp')
     .controller('Slide8Controller', ['$scope', '$controller', function($scope, $controller) {
-        $scope.maxPartialIndex = 4;
+        $scope.maxPartialIndex = 2;
         $controller('PartialsSlideController', {$scope: $scope});
 
-        $scope.controllerCode = "angular.module('demoApp').controller('TestController', ['$scope', function($scope) {\n" +
-        "       $scope.users = [\n" +
-        "           {id: 0, first_name: 'Patient', last_name: '0', email: 'p0@test.com', address: '123 Any Street', city: 'Springfield', state: 'IL', zip: '62703'},\n" +
-        "           {id: 1, first_name: 'Patient', last_name: '1', email: 'p1@test.com', address: '123 Any Street', city: 'Springfield', state: 'MA', zip: '01101'},\n" +
-        "           {id: 2, first_name: 'Patient', last_name: '2', email: 'p2@test.com', address: '123 Any Street', city: 'Springfield', state: 'OH', zip: '45501'},\n" +
-        "           {id: 3, first_name: 'Patient', last_name: '3', email: 'p3@test.com', address: '123 Any Street', city: 'Springfield', state: 'SD', zip: '57062'}\n" +
-        "       ];\n" +
-        "       $scope.loadUser = function(user) {\n" +
-        "           $scope.user = angular.copy(user);\n" +
-        "       };\n" +
-        "       $scope.cancel = function() {\n" +
-        "           $scope.user = undefined;\n" +
-        "       };\n" +
-        "       $scope.updateUser = function() {\n" +
-        "           $scope.users[$scope.user.id] = angular.copy($scope.user);\n" +
-        "           $scope.cancel();\n" +
-        "       };\n" +
-        "       $scope.deleteUser = function() {\n" +
-        "           $scope.users.splice($scope.user.id, 1);\n" +
-        "           $scope.users.forEach(function(user, index) {\n" +
-        "                user.id = index;\n" +
-        "            });\n" +
-        "           $scope.cancel();\n" +
-        "       };\n" +
-        "   }]);";
+        $scope.filterCode = "angular.module('demoApp').filter('FullName', [function () {\n" +
+            "  return function(user) {\n" +
+            "    return (user.firstName || 'John') + ' ' + (user.lastName || 'Doe');\n" +
+            "  }\n" +
+            "}]);";
+        $scope.filterTestCode = "describe('Filter: FullName', function () {\n" +
+            "  beforeEach(module('demoApp'));\n" +
+            "  var $filter;\n" +
+            "  beforeEach(inject(function (_$filter_) { $filter = _$filter_; }));\n" +
+            "  it('> Verify that full name matches the user values', function() {\n" +
+            "    var user = { _id: '55d21f29437bed5b216acbcb', isAwesome: true,\n" +
+            "                 firstName: 'Pete', lastName: 'Clodi' };\n" +
+            "    expect($filter('FullName')(user)).toEqual('Pete Clodi');\n" +
+            "  });\n" +
+            "  describe('> Test failure Cases', function() {\n" +
+            "    it('> Verify that full name fills in for an empty First Name property', function() {\n" +
+            "      var user = { _id: '55d21f29437bed5b216acbcb', isAwesome: true, lastName: 'Clodi' };\n" +
+            "      expect($filter('FullName')(user)).toEqual('John Clodi');\n" +
+            "    });\n" +
+            "    it('> Verify that full name fills in for an empty Last Name property', function() {\n" +
+            "      var user = { _id: '55d21f29437bed5b216acbcb', isAwesome: true, firstName: 'Pete' };\n" +
+            "      expect($filter('FullName')(user)).toEqual('Pete Doe'); \n" +
+            "    });\n" +
+            "    it('> Verify that full name fills in when there are NO name properties', function() {\n" +
+            "      var user = { _id: '55d21f29437bed5b216acbcb', isAwesome: true };\n" +
+            "      expect($filter('FullName')(user)).toEqual('John Doe');\n" +
+            "    });\n" +
+            "  });\n" +
+            "});";
 
-        $scope.templateCode = "<div>\n" +
-        "   <div class='left'>\n" +
-        "       <h2>Users</h2>\n" +
-        "       <ul ng-if='users.length > 0'>\n" +
-        "           <li ng-repeat='user in users track by user.id'>\n" +
-        "               <a ng-click='loadUser(user)'>{{user.first_name}}&nbsp;{{user.last_name}}</a>\n" +
-        "           </li>\n" +
-        "       </ul>\n" +
-        "       <div class='no-users' ng-if='users.length === 0'>No users</div>\n" +
-        "   </div>\n" +
-        "   <div class='right'>\n" +
-        "       <form name='singlePageUser' ng-submit='updateUser()'>\n" +
-        "           <div class='user-data'>\n" +
-        "               <h3>Name</h3>\n" +
-        "               <label>\n" +
-        "                   <input ng-model='user.first_name'>\n" +
-        "               </label>\n" +
-        "               <label>\n" +
-        "                   <input ng-model='user.last_name'>\n" +
-        "               </label>\n" +
-        "           </div>\n" +
-        "           ...\n" +
-        "           <button type='button' ng-click='cancel()' ng-disabled='!user'>Cancel</button>\n" +
-        "           <button type='submit' ng-disabled='!user'>Update</button>\n" +
-        "           <button type='button' ng-click='deleteUser()' ng-disabled='!user'>Delete</button>\n" +
-        "       </form>\n" +
-        "   </div>\n" +
-        "</div>";
+        $scope.headerCode = "angular.module('demoApp').directive('header', [function () {\n" +
+            "  return {\n" +
+            "    restrict: 'E',\n" +
+            "    scope: { brandName: '@' },\n" +
+            "    templateUrl: 'views/directives/header.html',\n" +
+            "    transclude: true\n" +
+            "  };\n" +
+            "}]);";
+        $scope.headerTestCode = "describe('Directive: Header', function () {\n" +
+            "  beforeEach(module('demoApp'));\n" +
+            "  var $compile, $scope;\n" +
+            "  function compileDirective(scope, transcludedHtml) {\n" +
+            "    var element =\n" +
+            "      $compile(\'<header brand-name=\"{{brandName}}\">' + transcludedHtml + '</header>')(scope);\n" +
+            "    scope.$apply(); return element;\n" +
+            "  }\n" +
+            "  beforeEach(inject(function (_$compile_, _$rootScope_) {\n" +
+            "    $compile = _$compile_;  $scope = _$rootScope_.$new();\n" +
+            "    angular.extend($scope, {brandName: \"Pete Clodi\'s DemoApp\"});\n" +
+            "  }));\n" +
+            "  it('> Verify that the BrandName value is stored in the Isolate Scope', function() {\n" +
+            "    var element = compileDirective($scope, '<div></div>');\n" +
+            "    expect(element.isolateScope().brandName).toEqual(\"Pete Clodi\'s DemoApp\");\n" +
+            "  });\n" +
+            "  it('> Verify that the transcluded html is inserted', function() {\n" +
+            "    var element = compileDirective($scope, '<h1>Testing the transclusion</h1>');\n" +
+            "    expect(element.html()).toMatch('Testing the transclusion');\n" +
+            "  });\n" +
+            "});";
     }]);

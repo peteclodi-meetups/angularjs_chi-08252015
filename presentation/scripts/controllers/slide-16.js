@@ -12,9 +12,9 @@ angular.module('angular1xApp')
         $controller('ListSlideController', {$scope: $scope});
 
         $scope.listItemsCache = [
-            {id: 0, text: "Smashing Magazine", subItem: {text: "http://www.smashingmagazine.com/"}},
-            {id: 1, text: "NG-Nuggets", subItem: {text: "http://ng.malsup.com/"}},
-            {id: 2, text: "Egghead.io", subItem: {text: "Short video tutorials"}},
+            {id: 0, text: "Smashing Magazine", subItems: [{id: 0, text: "http://www.smashingmagazine.com/"}] },
+            {id: 1, text: "NG-Nuggets", subItems: [{id: 0, text: "http://ng.malsup.com/"}] },
+            {id: 2, text: "Egghead.io", subItems: [{id: 0, text: "Short video tutorials"}] },
             {id: 3, text: "YearOfMoo.com"},
             {id: 4, text: "StackOverflow.com"}
         ];

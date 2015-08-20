@@ -9,32 +9,29 @@
  */
 angular.module('angular1xApp')
     .controller('Slide4Controller', ['$scope', '$controller', function($scope, $controller) {
-        $scope.maxPartialIndex = 4;
-        $controller('PartialsSlideController', {$scope: $scope});
+        $controller('ListSlideController', {$scope: $scope});
 
-        $scope.configCode = "angular.module('demoApp', ['ngResource', 'ngRoute', 'ngSanitize'])\n" +
-        "   .config(['$routeProvider', function ($routeProvider) {\n" +
-        "       $routeProvider\n" +
-        "          .when('/', {\n" +
-        "               templateUrl: 'views/main.html',\n" +
-        "               controller: 'MainController'\n" +
-        "           })\n" +
-        "           .when('/user/:id', {\n" +
-        "               templateUrl: 'views/user.html',\n" +
-        "               controller: 'UserController'\n" +
-        "           })\n" +
-        "           .when('/single-page', {\n" +
-        "               templateUrl: 'views/single-page.html',\n" +
-        "               controller: 'SinglePageController'\n" +
-        "           })\n" +
-        "           .otherwise({\n" +
-        "               redirectTo: '/'\n" +
-        "           });\n" +
-        "   }]);";
-
-
-        $scope.runCode = "angular.module('demoApp', ['ngResource', 'ngRoute', 'ngSanitize'])\n" +
-        ".run(['$location', function($location) {\n" +
-        "       $location.url('/user/5');\n" +
-        "   }]);\n"
+        $scope.listItemsCache = [
+            {id: 0, text: "E2E Testing" ,
+                subItems: [
+                    {id: 0, text: 'Test code like a User'},
+                    {id: 1, text: 'Can only access what\'s in the DOM'},
+                    {id: 2, text: 'Very different from the other techniques'}
+                ]
+            },
+            {id: 1, text: "Integration Testing",
+                subItems: [
+                    {id: 0, text: 'Test code in concert with teh rest of teh codebase'},
+                    {id: 1, text: 'Mock only dependencies external to codebase'}
+                ]
+            }
+        ];
+        $scope.listItems = [
+            {id: 2, text: "Unit Testing",
+                subItems: [
+                    {id: 0, text: 'Test code in isolation'},
+                    {id: 1, text: 'Mock all dependencies'}
+                ]
+            }
+        ];
     }]);

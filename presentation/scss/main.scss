@@ -1,3 +1,7 @@
+@import 'paging';
+@import 'slide';
+@import 'slide-6';
+
 html {
     min-height: 100%;
     position: relative;
@@ -57,9 +61,6 @@ h6 {
 }
 
 ul > li.ng-enter {
-    -webkit-animation: fadeInUp 1s;
-    -moz-animation: fadeInUp 1s;
-    -o-animation: fadeInUp 1s;
     animation: fadeInUp 1s;
 }
 
@@ -97,55 +98,8 @@ textarea {
     padding-right: 25px;
 }
 
-.content > .slide {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.slide-title {
-    text-align: center;
-}
-
-.slide-content {
-    font-size: 16px;
-}
-
 .social {
     width: 32px;
-}
-
-paging {
-    background-color: #6CB8C1;
-    color: #FFFFFF;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-button {
-    height: 50px;
-    width: 200px;
-
-    background-color: #77CDD6;
-    border: 1px solid #549DA9;
-    border-radius: 15px;
-    color: #FFFFFF;
-
-    font-size: 26px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-paging > button:disabled {
-    background-color: #6CB8C1;
-}
-
-.slide {
-    text-align: center;
 }
 
 .slide-0 > h1 >figure,
@@ -213,14 +167,6 @@ paging > button:disabled {
 .slide-10 > ng-include > pre > .code,
 .slide-11 > ng-include > pre > .code {
     font-size: 20px;
-}
-
-.slide-6 > figure {
-    margin: 0;
-}
-
-.slide-6 > figure > img {
-    width: 72%;
 }
 
 .example-slide {
