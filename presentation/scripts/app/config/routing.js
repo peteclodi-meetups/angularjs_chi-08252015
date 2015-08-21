@@ -52,8 +52,7 @@ angular.module('angular1xApp')
                 controller: 'Slide9Controller'
             })
             .when('/10', {
-                templateUrl: 'views/slide-10.html',
-                controller: 'Slide10Controller'
+                templateUrl: 'views/slide-10.html'
             })
             .when('/11', {
                 templateUrl: 'views/slide-11.html',

@@ -1,6 +1,24 @@
 .slide {
-    max-width: 1200px;
+    max-width: 1800px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+.slide-7 code {
+    font-size: 28px;
+}
+
+.slide-8 code {
+    font-size: 21px;
+}
+
+.slide-9 {
+    .service-async-code  code {
+        font-size: 24px;
+    }
+
+    .code code {
+        font-size: 23px;
+    }
 }

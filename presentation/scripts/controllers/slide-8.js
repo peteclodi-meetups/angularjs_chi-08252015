@@ -20,24 +20,19 @@ angular.module('angular1xApp')
         $scope.filterTestCode = "describe('Filter: FullName', function () {\n" +
             "  beforeEach(module('demoApp'));\n" +
             "  var $filter;\n" +
-            "  beforeEach(inject(function (_$filter_) { $filter = _$filter_; }));\n" +
+            "  beforeEach(inject(function (_$filter_) { $filter = _$filter_; }));\n\n" +
             "  it('> Verify that full name matches the user values', function() {\n" +
-            "    var user = { _id: '55d21f29437bed5b216acbcb', isAwesome: true,\n" +
-            "                 firstName: 'Pete', lastName: 'Clodi' };\n" +
+            "    var user = { _id: '55d21f29437bed5b216acbcb', isAwesome: true, firstName: 'Pete', lastName: 'Clodi' };\n" +
             "    expect($filter('FullName')(user)).toEqual('Pete Clodi');\n" +
-            "  });\n" +
+            "  });\n\n" +
             "  describe('> Test failure Cases', function() {\n" +
             "    it('> Verify that full name fills in for an empty First Name property', function() {\n" +
             "      var user = { _id: '55d21f29437bed5b216acbcb', isAwesome: true, lastName: 'Clodi' };\n" +
             "      expect($filter('FullName')(user)).toEqual('John Clodi');\n" +
-            "    });\n" +
+            "    });\n\n" +
             "    it('> Verify that full name fills in for an empty Last Name property', function() {\n" +
             "      var user = { _id: '55d21f29437bed5b216acbcb', isAwesome: true, firstName: 'Pete' };\n" +
             "      expect($filter('FullName')(user)).toEqual('Pete Doe'); \n" +
-            "    });\n" +
-            "    it('> Verify that full name fills in when there are NO name properties', function() {\n" +
-            "      var user = { _id: '55d21f29437bed5b216acbcb', isAwesome: true };\n" +
-            "      expect($filter('FullName')(user)).toEqual('John Doe');\n" +
             "    });\n" +
             "  });\n" +
             "});";

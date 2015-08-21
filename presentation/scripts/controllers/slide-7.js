@@ -8,7 +8,10 @@
  * Controller of the angular1xApp
  */
 angular.module('angular1xApp')
-    .controller('Slide7Controller', ['$scope', function($scope) {
+    .controller('Slide7Controller', ['$scope', '$controller', function($scope, $controller) {
+        $scope.maxPartialIndex = 2;
+        $controller('PartialsSlideController', {$scope: $scope});
+
         $scope.karmaConfig = "autoWatch: true,\n" +
             "// base path, that will be used to resolve files and exclude\n" +
             "basePath: '',\n" +
@@ -30,5 +33,17 @@ angular.module('angular1xApp')
             "reporters: ['progress', 'coverage'],\n" +
             "browsers: ['PhantomJS'],\n" +
             "// Continuous Integration mode\n" +
-            "singleRun: false,"
+            "singleRun: false,";
+
+        $scope.karmaGruntConfig = "// Test settings\n" +
+            "karma: {\n" +
+            "    ci: {\n" +
+            "        configFile: './karma.conf.js',\n" +
+            "        singleRun: false\n" +
+            "    },\n" +
+            "    unit: {\n" +
+            "        configFile: './karma.conf.js',\n" +
+            "        singleRun: true\n" +
+            "    }\n" +
+            "}";
     }]);

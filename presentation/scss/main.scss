@@ -68,6 +68,10 @@ li {
     text-align: left;
 }
 
+ol li {
+    font-size: 32px;
+}
+
 pre {
     margin: 0;
 }
@@ -136,32 +140,10 @@ textarea {
     padding-right: 10px;
 }
 
-.slide-4 > ng-include > div > code {
+code {
+    font-family: monospace, monospace;
     font-size: 20px;
     text-align: left;
-}
-
-.slide code {
-    text-align: left !important;
-}
-
-.code {
-    font-family: monospace, monospace;
-    font-size: 19px;
-    text-align: left;
-}
-
-.slide-4 > ng-include > pre > .code {
-    font-size: 26px;
-}
-
-.slide-7 > ng-include > pre > .code,
-.slide-12 > ng-include > pre > .code {
-    font-size: 22px;
-}
-
-.slide-8 > ng-include > pre > .code {
-    font-size: 21px;
 }
 
 .slide-10 > ng-include > pre > .code,

@@ -1,9 +1,12 @@
-<div class="slide slide-7">
-    <div>
-        <h1>Configuring Karma</h1>
+<div class="slide slide-7 partial-slide">
+    <div ng-click="switchPartial($event)">
+        <h1>Configuring Karma
+            <span ng-switch="showPartial">
+                <span ng-switch-when="2"> in Grunt</span>
+            </span>
+        </h1>
     </div>
     <hr>
-    <pre>
-        <div hljs language="javascript" source="karmaConfig" class="code"></div>
-    </pre>
+    <ng-include src=" 'views/partials/slide-7-karma-config.html' " ng-if="showPartial === 1"></ng-include>
+    <ng-include src=" 'views/partials/slide-7-karma-grunt-config.html' " ng-if="showPartial === 2"></ng-include>
 </div>

@@ -6,15 +6,13 @@ describe('Service: UserDeletionProcessor', function () {
     beforeEach(module('demoApp'));
 
     var $httpBackend;
-    var $http;
     var Users;
     var UserDeletionProcessor;
     var localUsers;
 
     // Initialize the controller and a mock scope
-    beforeEach(inject(function (_$httpBackend_, _$http_, _Users_, _UserDeletionProcessor_) {
+    beforeEach(inject(function (_$httpBackend_, _Users_, _UserDeletionProcessor_) {
         $httpBackend = _$httpBackend_;
-        $http = _$http_;
         Users = _Users_;
         UserDeletionProcessor = _UserDeletionProcessor_;
         localUsers = angular.copy(users);

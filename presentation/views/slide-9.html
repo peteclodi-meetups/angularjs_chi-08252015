@@ -1,55 +1,19 @@
-<div class="slide slide-9">
-    <h2>Putting the Controller and Template together</h2>
-    <hr>
-    <br>
-    <div class="example-slide">
-        <div class="left">
-            <h2>Users</h2>
-            <ul ng-if="users.length > 0">
-                <li ng-repeat="user in users track by user.id"><a ng-click="loadUser(user)">{{user.first_name}}&nbsp;{{user.last_name}}</a></li>
-            </ul>
-            <div class="no-users" ng-if="users.length === 0">No users</div>
-        </div>
-
-        <div class="right">
-            <form name='singlePageUser' ng-submit="updateUser()">
-                <div class="user-data">
-                    <h3>Name</h3>
-                    <label>
-                        <input ng-model="user.first_name">
-                    </label>
-                    <label>
-                        <input ng-model="user.last_name">
-                    </label>
-                </div>
-                <div class="user-data">
-                    <h3>email</h3>
-                    <input ng-model="user.email">
-                </div>
-                <div class="user-data">
-                    <h3>Address</h3>
-                    <label>
-                        <h4>Street</h4>
-                        <input ng-model="user.address">
-                    </label>
-                    <label>
-                        <h4>City</h4>
-                        <input ng-model="user.city">
-                    </label>
-                    <label>
-                        <h4>State</h4>
-                        <input ng-model="user.state">
-                    </label>
-                    <label>
-                        <h4>Zip</h4>
-                        <input ng-model="user.zip">
-                    </label>
-                </div>
-
-                <button type="button"  ng-click="cancel()" ng-disabled="!user">Cancel</button>
-                <button type="submit" ng-disabled="!user">Update</button>
-                <button type="button" ng-click="deleteUser()" ng-disabled="!user">Delete</button>
-            </form>
-        </div>
+<div class="slide slide-9 partial-slide">
+    <div ng-click="switchPartial($event)">
+        <h2>Integration Testing
+            <span ng-switch="showPartial">
+                <span ng-switch-when="1">Controller: Synchronous Call</span>
+                <span ng-switch-when="2">Controller: Asynchronous Call</span>
+                <span ng-switch-when="3">Controller As</span>
+                <span ng-switch-when="4">Service: Synchronous Call</span>
+                <span ng-switch-when="5">Service: Asynchronous Call</span>
+            </span>
+        </h2>
     </div>
+    <hr>
+    <ng-include src=" 'views/partials/slide-9-users-controller-sync.html' " ng-if="showPartial === 1"></ng-include>
+    <ng-include src=" 'views/partials/slide-9-users-controller-async.html' " ng-if="showPartial === 2"></ng-include>
+    <ng-include src=" 'views/partials/slide-9-user-controller-as.html' " ng-if="showPartial === 3"></ng-include>
+    <ng-include src=" 'views/partials/slide-9-user-deletion-processor-service-sync.html' " ng-if="showPartial === 4"></ng-include>
+    <ng-include src=" 'views/partials/slide-9-user-deletion-processor-service-async.html' " ng-if="showPartial === 5"></ng-include>
 </div>

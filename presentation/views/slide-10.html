@@ -1,10 +1,41 @@
-<div class="slide slide-10 partial-slide">
-    <div ng-click="switchPartial($event)">
-        <h1>Services and Providers</h1>
-    </div>
+<div class="slide slide-10">
+    <h1>E2E Testing: Manual vs Automated</h1>
     <hr>
-    <ng-include src=" 'views/partials/slide-10-services.html' " ng-if="showPartial === 1" ng-controller="Slide10ServicesController"></ng-include>
-    <ng-include src=" 'views/partials/slide-10-services-code.html' " ng-if="showPartial === 2"></ng-include>
-    <ng-include src=" 'views/partials/slide-10-providers.html' " ng-if="showPartial === 3" ng-controller="Slide10ProvidersController"></ng-include>
-    <ng-include src=" 'views/partials/slide-10-providers-code.html' " ng-if="showPartial === 4"></ng-include>
+    <div style="float:left;">
+        <h2>Manual</h2>
+        <ol>
+            <li><h3>Launch your App yourself</h3></li>
+            <li>
+                <h3>Perform your Testing</h3>
+                <ul>
+                    <li><h4>Possibly documented</h4></li>
+                    <li><h4>All errors might be noticed</h4></li>
+                    <li><h4>Tests might be performed the same each time</h4></li>
+                </ul>
+            </li>
+            <li><h3>Note Bugs/Create Bug Reports</h3></li>
+            <li><h3>Fix bug(s) and update your codebase</h3></li>
+            <li>
+                <h3>Hope you tested the system fully</h3>
+                <ul><li><h4>But you might have missed something</h4></li></ul>
+            </li>
+            <li><h3>Return to Step 1</h3></li>
+        </ol>
+    </div>
+    <div style="float:right;">
+        <h2>Automated</h2>
+        <ol>
+            <li><h3>Setup Test Environment</h3></li>
+            <li><h3>Configure your test runner</h3></li>
+            <li><h3>Write Tests</h3></li>
+            <li><h3>Run Codified Tests</h3></li>
+            <li><h3>Note Bugs/Create Bug Reports</h3></li>
+            <li><h3>Fix bug(s) and update your codebase</h3></li>
+            <li>
+                <h3>Know you tested the system fully</h3>
+                <ul><li><h4>Because of Step 3!!!</h4></li></ul>
+            </li>
+            <li><h3>Return to Step 4</h3></li>
+        </ol>
+    </div>
 </div>
