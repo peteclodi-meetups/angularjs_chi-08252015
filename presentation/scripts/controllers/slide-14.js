@@ -27,7 +27,9 @@ angular.module('angular1xApp')
         "      <span>{{user.isAwesome ? 'Hell Yeah!' : 'Naw'}}</span>\n" +
         "      <a ng-click=\"editUser(user)\">edit</a>\n" +
         "    </div>\n" +
-        "    <button ng-click=\"deleteSelectedUsers()\" ng-disabled=\"!anySelected\">Delete Selected Users</button>\n" +
+        "    <button ng-click=\"deleteSelectedUsers()\" ng-disabled=\"!anySelected\">\n" +
+        "      Delete Selected Users\n" +
+        "    </button>\n" +
         "  </div>\n" +
         "</section>";
 

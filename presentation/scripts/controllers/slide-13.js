@@ -28,7 +28,8 @@ angular.module('angular1xApp')
             "  // Default time to wait in ms before a test fails.\n" +
             "  defaultTimeoutInterval: 30 * 1000\n" +
             "},\n" +
-            "// The timeout in milliseconds for each script run on the browser. This should be longer than the maximum time your application needs to stabilize between tasks.\n" +
+            "// The timeout in milliseconds for each script run on the browser.\n" +
+            "// This should be longer than the maximum time your application needs to stabilize between tasks.\n" +
             "allScriptsTimeout: 30 *1000,\n" +
             "multiCapabilities: [\n" +
             "  {\n" +

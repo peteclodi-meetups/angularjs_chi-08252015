@@ -34,3 +34,35 @@
 .slide-14 code {
     font-size: 30px;
 }
+
+
+.slide-0, .slide-15 {
+    &>h1>figure {
+        display: inline-block;
+        margin: 0;
+        vertical-align: middle;
+
+        &>img {
+            width: 200px;
+        }
+    }
+
+    &>a {
+        figure>img {
+            max-width: 500px;
+        }
+        h3 {
+            padding-top: 0;
+        }
+    }
+
+    &>h4>a {
+        display: inline-block;
+        margin-left: 25px;
+
+        img {
+            vertical-align: middle;
+            padding-right: 10px;
+        }
+    }
+}

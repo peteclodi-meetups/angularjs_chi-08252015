@@ -71,15 +71,7 @@ angular.module('angular1xApp')
                 controller: 'Slide14Controller'
             })
             .when('/15', {
-                templateUrl: 'views/slide-15.html',
-                controller: 'Slide15Controller'
-            })
-            .when('/16', {
-                templateUrl: 'views/slide-16.html',
-                controller: 'Slide16Controller'
-            })
-            .when('/17', {
-                templateUrl: 'views/slide-17.html'
+                templateUrl: 'views/slide-15.html'
             })
             .otherwise({
                 redirectTo: '/'
