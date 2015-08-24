@@ -491,6 +491,77 @@ module.exports = function (grunt) {
             unit: {
                 configFile: './karma.conf.js',
                 singleRun: true
+            },
+            controllers: {
+                configFile: './karma.conf.js',
+                options: {
+                    files: [
+                        // bower:js
+                        'bower_components/angular/angular.js',
+                        'bower_components/angular-route/angular-route.js',
+                        'bower_components/angular-sanitize/angular-sanitize.js',
+                        'bower_components/angular-resource/angular-resource.js',
+                        'bower_components/angular-mocks/angular-mocks.js',
+                        // endbower
+                        "scripts/**/*.js",
+                        "test/global.Spec.js",
+                        "test/controllers/*.js"
+                    ]
+                },
+                singleRun: true
+            },
+            directives: {
+                configFile: './karma.conf.js',
+                options: {
+                    files: [
+                        // bower:js
+                        'bower_components/angular/angular.js',
+                        'bower_components/angular-route/angular-route.js',
+                        'bower_components/angular-sanitize/angular-sanitize.js',
+                        'bower_components/angular-resource/angular-resource.js',
+                        'bower_components/angular-mocks/angular-mocks.js',
+                        // endbower
+                        "scripts/**/*.js",
+                        "views/**/*.html",
+                        "test/directives/*.js"
+                    ]
+                },
+                singleRun: true
+            },
+            filters: {
+                configFile: './karma.conf.js',
+                options: {
+                    files: [
+                        // bower:js
+                        'bower_components/angular/angular.js',
+                        'bower_components/angular-route/angular-route.js',
+                        'bower_components/angular-sanitize/angular-sanitize.js',
+                        'bower_components/angular-resource/angular-resource.js',
+                        'bower_components/angular-mocks/angular-mocks.js',
+                        // endbower
+                        "scripts/**/*.js",
+                        "test/filters/*.js"
+                    ]
+                },
+                singleRun: true
+            },
+            services: {
+                configFile: './karma.conf.js',
+                options: {
+                    files: [
+                        // bower:js
+                        'bower_components/angular/angular.js',
+                        'bower_components/angular-route/angular-route.js',
+                        'bower_components/angular-sanitize/angular-sanitize.js',
+                        'bower_components/angular-resource/angular-resource.js',
+                        'bower_components/angular-mocks/angular-mocks.js',
+                        // endbower
+                        "scripts/**/*.js",
+                        "test/global.Spec.js",
+                        "test/services/*.js"
+                    ]
+                },
+                singleRun: true
             }
         },
 
@@ -531,14 +602,15 @@ module.exports = function (grunt) {
         'karma:ci'
     ]);
 
-    grunt.registerTask('test', [
-        'clean:test',
-        'wiredep:test',
-        'sass:test',
-        'autoprefixer:test',
-        'connect:test',
-        'karma:unit'
-    ]);
+    grunt.registerTask('test', 'Run Unit Tests on our stuff', function(testSuite) {
+        grunt.task.run(['clean:test', 'wiredep:test', 'sass:test', 'autoprefixer:test', 'connect:test']);
+        if(arguments.length === 0) {
+            grunt.task.run('karma:unit');
+        }
+        else {
+            grunt.task.run('karma:' + testSuite);
+        }
+    });
 
     grunt.registerTask('e2e', 'Run E2E testing on our stuff', function(env) {
         grunt.task.run(['clean:e2e', 'sass:e2e', 'autoprefixer:e2e', 'copy:e2e']);
