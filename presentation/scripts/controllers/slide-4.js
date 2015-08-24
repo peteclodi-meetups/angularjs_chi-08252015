@@ -21,7 +21,7 @@ angular.module('angular1xApp')
             },
             {id: 1, text: "Integration Testing",
                 subItems: [
-                    {id: 0, text: 'Test code in concert with teh rest of teh codebase'},
+                    {id: 0, text: 'Test code in concert with the rest of the codebase'},
                     {id: 1, text: 'Mock only dependencies external to codebase'}
                 ]
             }
