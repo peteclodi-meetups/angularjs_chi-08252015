@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angular1xApp.controller:Slide12
+ * @name angularUnitTestApp.controller:Slide12
  * @description
  * # Slide 12 Controller
- * Controller of the angular1xApp
+ * Controller of the angularUnitTestApp
  */
-angular.module('angular1xApp')
+angular.module('angularUnitTestApp')
     .controller('Slide12Controller', ['$scope', '$controller', function($scope, $controller) {
         $controller('ListSlideController', {$scope: $scope});
 

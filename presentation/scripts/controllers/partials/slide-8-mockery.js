@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angular1xApp.controller:Slide8MockeryController
+ * @name angularUnitTestApp.controller:Slide8MockeryController
  * @description
  * # Slide 8 Mockery Controller
- * Controller of the angular1xApp
+ * Controller of the angularUnitTestApp
  */
-angular.module('angular1xApp')
+angular.module('angularUnitTestApp')
     .controller('Slide8MockeryController', ['$scope', '$controller', function($scope, $controller) {
         $controller('ListSlideController', {$scope: $scope});
 

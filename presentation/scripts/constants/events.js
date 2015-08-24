@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angular1xApp.constant:Events
+ * @name angularUnitTestApp.constant:Events
  * @description
  * # Events constants
- * Constant of the angular1xApp
+ * Constant of the angularUnitTestApp
  */
-angular.module('angular1xApp')
+angular.module('angularUnitTestApp')
     .constant('Events', {
         focusNextPage: 'focusNextPage',
         unfocusNextPage: 'unfocusNextPage'

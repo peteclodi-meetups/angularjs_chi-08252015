@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angular1xApp.module
+ * @name angularUnitTestApp.module
  * @description
  * # Main App Module
- * The angular1xApp
+ * The angularUnitTestApp
  */
-angular.module('angular1xApp', [
+angular.module('angularUnitTestApp', [
     'ngAnimate',
     'ngRoute',
     'hljs'

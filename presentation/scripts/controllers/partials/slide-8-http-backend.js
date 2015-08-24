@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angular1xApp.controller:Slide8HTTPBackendController
+ * @name angularUnitTestApp.controller:Slide8HTTPBackendController
  * @description
  * # Slide 8 HTTP Backend Controller
- * Controller of the angular1xApp
+ * Controller of the angularUnitTestApp
  */
-angular.module('angular1xApp')
+angular.module('angularUnitTestApp')
     .controller('Slide8HTTPBackendController', ['$scope', '$controller', function($scope, $controller) {
         $controller('ListSlideController', {$scope: $scope});
 

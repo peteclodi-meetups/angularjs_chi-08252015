@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angular1xApp.controller:PartialSlide
+ * @name angularUnitTestApp.controller:PartialSlide
  * @description
  * # Partial Slide Controller
- * Controller of the angular1xApp
+ * Controller of the angularUnitTestApp
  */
-angular.module('angular1xApp')
+angular.module('angularUnitTestApp')
     .controller('PartialsSlideController', ['$scope', function($scope) {
         $scope.showPartial = 1;
         $scope.switchPartial = function ($event) {

@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angular1xApp.run:Constants
+ * @name angularUnitTestApp.run:Constants
  * @description
  * # Constants used throughout the App
- * Run block of the angular1xApp
+ * Run block of the angularUnitTestApp
  */
-angular.module('angular1xApp')
+angular.module('angularUnitTestApp')
     .run(['$rootScope', 'Events', function ($rootScope, Events) {
         $rootScope.events = Events;
     }]);

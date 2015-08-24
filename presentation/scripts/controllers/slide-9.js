@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angular1xApp.controller:Slide9
+ * @name angularUnitTestApp.controller:Slide9
  * @description
  * # Slide 9 Controller
- * Controller of the angular1xApp
+ * Controller of the angularUnitTestApp
  */
-angular.module('angular1xApp')
+angular.module('angularUnitTestApp')
     .controller('Slide9Controller', ['$scope', '$controller', function($scope, $controller) {
         $scope.maxPartialIndex = 2;
         $controller('PartialsSlideController', {$scope: $scope});

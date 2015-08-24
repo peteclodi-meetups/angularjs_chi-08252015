@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angular1xApp.directive:Paging
+ * @name angularUnitTestApp.directive:Paging
  * @description
  * # Paging Directive
- * Directive of the angular1xApp
+ * Directive of the angularUnitTestApp
  */
-angular.module('angular1xApp')
+angular.module('angularUnitTestApp')
     .directive('paging',
     ['$location', function ($location) {
         return {

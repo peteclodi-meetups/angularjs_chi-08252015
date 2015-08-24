@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angular1xApp.controller:ListSlide
+ * @name angularUnitTestApp.controller:ListSlide
  * @description
  * # List Slide Controller
- * Controller of the angular1xApp
+ * Controller of the angularUnitTestApp
  */
-angular.module('angular1xApp')
+angular.module('angularUnitTestApp')
     .controller('ListSlideController', ['$scope', function($scope) {
         $scope.addItems = function() {
             if($scope.listItemsCache.length > 0) {

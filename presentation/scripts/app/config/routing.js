@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angular1xApp.config:Routing
+ * @name angularUnitTestApp.config:Routing
  * @description
  * # Routing Configuration
- * Config block of the angular1xApp
+ * Config block of the angularUnitTestApp
  */
-angular.module('angular1xApp')
+angular.module('angularUnitTestApp')
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
