@@ -1,41 +1,19 @@
-<div class="slide slide-10">
-    <h1>E2E Testing: Manual vs Automated</h1>
+<div class="slide slide-10 partial-slide">
+    <div ng-click="switchPartial($event)">
+        <h2>Integration Testing
+            <span ng-switch="showPartial">
+                <span ng-switch-when="1">Controller: Synchronous Call</span>
+                <span ng-switch-when="2">Controller: Asynchronous Call</span>
+                <span ng-switch-when="3">Controller As</span>
+                <span ng-switch-when="4">Service: Synchronous Call</span>
+                <span ng-switch-when="5">Service: Asynchronous Call</span>
+            </span>
+        </h2>
+    </div>
     <hr>
-    <div style="float:left;">
-        <h2>Manual</h2>
-        <ol>
-            <li><h3>Launch your App yourself</h3></li>
-            <li>
-                <h3>Perform your Testing</h3>
-                <ul>
-                    <li><h4>Possibly documented</h4></li>
-                    <li><h4>All errors might be noticed</h4></li>
-                    <li><h4>Tests might be performed the same each time</h4></li>
-                </ul>
-            </li>
-            <li><h3>Note Bugs/Create Bug Reports</h3></li>
-            <li><h3>Fix bug(s) and update your codebase</h3></li>
-            <li>
-                <h3>Hope you tested the system fully</h3>
-                <ul><li><h4>But you might have missed something</h4></li></ul>
-            </li>
-            <li><h3>Return to Step 1</h3></li>
-        </ol>
-    </div>
-    <div style="float:right;">
-        <h2>Automated</h2>
-        <ol>
-            <li><h3>Setup Test Environment</h3></li>
-            <li><h3>Configure your test runner</h3></li>
-            <li><h3>Write Tests</h3></li>
-            <li><h3>Run Codified Tests</h3></li>
-            <li><h3>Note Bugs/Create Bug Reports</h3></li>
-            <li><h3>Fix bug(s) and update your codebase</h3></li>
-            <li>
-                <h3>Know you tested the system fully</h3>
-                <ul><li><h4>Because of Step 3!!!</h4></li></ul>
-            </li>
-            <li><h3>Return to Step 4</h3></li>
-        </ol>
-    </div>
+    <ng-include src=" 'views/partials/slide-10-users-controller-sync.html' " ng-if="showPartial === 1"></ng-include>
+    <ng-include src=" 'views/partials/slide-10-users-controller-async.html' " ng-if="showPartial === 2"></ng-include>
+    <ng-include src=" 'views/partials/slide-10-user-controller-as.html' " ng-if="showPartial === 3"></ng-include>
+    <ng-include src=" 'views/partials/slide-10-user-deletion-processor-service-sync.html' " ng-if="showPartial === 4"></ng-include>
+    <ng-include src=" 'views/partials/slide-10-user-deletion-processor-service-async.html' " ng-if="showPartial === 5"></ng-include>
 </div>

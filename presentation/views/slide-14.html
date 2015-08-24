@@ -1,5 +1,17 @@
-<div class="slide slide-14 list-slide" ng-click="addItems()">
-    <h1>Useful Tools</h1>
+<div class="slide slide-14 partial-slide">
+    <div ng-click="switchPartial($event)">
+        <h1>E2E Testing:
+            <span ng-switch="showPartial">
+                <span ng-switch-default>Here's our page</span>
+                <span ng-switch-when="2">Configuring a Page</span>
+                <span ng-switch-when="3">Configuring a Control</span>
+                <span ng-switch-when="4">Test Script</span>
+            </span>
+        </h1>
+    </div>
     <hr>
-    <ng-include src=" 'views/partials/list-slide.html' "></ng-include>
+    <ng-include src=" 'views/partials/slide-14-html.html' " ng-if="showPartial === 1"></ng-include>
+    <ng-include src=" 'views/partials/slide-14-page.html' " ng-if="showPartial === 2"></ng-include>
+    <ng-include src=" 'views/partials/slide-14-control.html' " ng-if="showPartial === 3"></ng-include>
+    <ng-include src=" 'views/partials/slide-14-test.html' " ng-if="showPartial === 4"></ng-include>
 </div>

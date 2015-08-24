@@ -1,19 +1,13 @@
 <div class="slide slide-9 partial-slide">
     <div ng-click="switchPartial($event)">
-        <h2>Integration Testing
+        <h1>Unit Testing
             <span ng-switch="showPartial">
-                <span ng-switch-when="1">Controller: Synchronous Call</span>
-                <span ng-switch-when="2">Controller: Asynchronous Call</span>
-                <span ng-switch-when="3">Controller As</span>
-                <span ng-switch-when="4">Service: Synchronous Call</span>
-                <span ng-switch-when="5">Service: Asynchronous Call</span>
+                <span ng-switch-default>Filters</span>
+                <span ng-switch-when="2">Directives</span>
             </span>
-        </h2>
+        </h1>
     </div>
     <hr>
-    <ng-include src=" 'views/partials/slide-9-users-controller-sync.html' " ng-if="showPartial === 1"></ng-include>
-    <ng-include src=" 'views/partials/slide-9-users-controller-async.html' " ng-if="showPartial === 2"></ng-include>
-    <ng-include src=" 'views/partials/slide-9-user-controller-as.html' " ng-if="showPartial === 3"></ng-include>
-    <ng-include src=" 'views/partials/slide-9-user-deletion-processor-service-sync.html' " ng-if="showPartial === 4"></ng-include>
-    <ng-include src=" 'views/partials/slide-9-user-deletion-processor-service-async.html' " ng-if="showPartial === 5"></ng-include>
+    <ng-include src=" 'views/partials/slide-9-full-name-filter.html' " ng-if="showPartial === 1"></ng-include>
+    <ng-include src=" 'views/partials/slide-9-header-directive.html' " ng-if="showPartial === 2"></ng-include>
 </div>

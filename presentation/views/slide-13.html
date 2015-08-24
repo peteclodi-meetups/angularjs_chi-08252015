@@ -1,38 +1,12 @@
-<div class="slide slide-13">
-    <h2>Putting a Service, Controller and Template together</h2>
-    <hr>
-    <br>
-    <div class="example-slide">
-        <div class="left">
-            <div class="left">
-                <h2>Users</h2>
-                <ul ng-if="users.length > 0">
-                    <li ng-repeat="user in users track by user.id"><a ng-click="loadUser(user)">({{user.id}})&nbsp;{{user.first_name}}&nbsp;{{user.last_name}}</a></li>
-                </ul>
-                <div class="no-users" ng-if="users.length === 0">No users</div>
-                <div ng-if="error">{{error}}</div>
-            </div>
-            <div class="right">
-                <form name="userFrm" class="user-form" ng-submit="updateUser()">
-                    <div class="user-data">
-                        <h4>First Name:&nbsp;</h4>
-                        <input name="firstName" ng-model="user.first_name" required>
-                    </div>
-                    <div class="user-data">
-                        <h4>Last Name:&nbsp;</h4>
-                        <input name="lastName" ng-model="user.last_name" required>
-                    </div>
-                    <button type="button" ng-click="cancel()" ng-disabled="userFrm.$error.required">Cancel</button>
-                    <button type="submit" ng-disabled="userFrm.$error.required">Update User</button>
-                    <button type="button" ng-click="deleteUser()" ng-disabled="userFrm.$error.required">Delete User</button>
-                </form>
-            </div>
-        </div>
-        <div class="right code-container">
-            <pre>
-                <div hljs language="javascript" source="serviceTestCode" class="code"></div>
-            </pre>
-        </div>
-        <textarea ng-model="log"></textarea>
+<div class="slide slide-13 partial-slide">
+    <div ng-click="switchPartial($event)">
+        <h1>Configuring Protractor
+            <span ng-switch="showPartial">
+                <span ng-switch-when="2"> in Grunt</span>
+            </span>
+        </h1>
     </div>
+    <hr>
+    <ng-include src=" 'views/partials/slide-13-protractor-config.html' " ng-if="showPartial === 1"></ng-include>
+    <ng-include src=" 'views/partials/slide-13-protractor-grunt-config.html' " ng-if="showPartial === 2"></ng-include>
 </div>

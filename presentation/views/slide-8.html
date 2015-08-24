@@ -1,13 +1,9 @@
-<div class="slide slide-8 partial-slide">
-    <div ng-click="switchPartial($event)">
-        <h1>Unit Testing
-            <span ng-switch="showPartial">
-                <span ng-switch-default>Filters</span>
-                <span ng-switch-when="2">Directives</span>
-            </span>
-        </h1>
+<div class="slide slide-8  partial-slide">
+    <div ng-switch="showPartial" ng-click="switchPartial($event)">
+        <h1 ng-switch-default>A quick break for some Angular.Mock(ery)</h1>
+        <h1 ng-switch-when="2">Mocking the $httpBackend</h1>
     </div>
     <hr>
-    <ng-include src=" 'views/partials/slide-8-full-name-filter.html' " ng-if="showPartial === 1"></ng-include>
-    <ng-include src=" 'views/partials/slide-8-header-directive.html' " ng-if="showPartial === 2"></ng-include>
+    <ng-include src=" 'views/partials/slide-8-partial.html' " ng-controller="Slide8MockeryController" ng-if="showPartial === 1"></ng-include>
+    <ng-include src=" 'views/partials/slide-8-partial.html' " ng-controller="Slide8HTTPBackendController" ng-if="showPartial === 2"></ng-include>
 </div>

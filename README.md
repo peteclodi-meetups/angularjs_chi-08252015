@@ -30,13 +30,23 @@ Presented on 8/25/2015
   - Karma itself
   - Grunt task
 
- - Unit Testing (8)
+ - Angular.Mock (8)
+  - Mock(ery)
+    - module
+    - inject
+    - $controller
+    - $httpBackend
+ - $httpBackend
+  - when*
+  - expect*
+
+ - Unit Testing (9)
   - filters
   - directives
     - isolate scope
     - transclusion
 
- - Integration Testing (9)
+ - Integration Testing (10)
   - controllers
     - synchronous $scope methods
     - asynchronous $scope methods
@@ -45,14 +55,17 @@ Presented on 8/25/2015
     - synchronous methods
     - asynchronous methods
 
- - E2E Testing (10)
+ - E2E Testing (11)
   - Manual vs. Automated
 
- - It's a different way of approaching testing (11)
+ - It's a different way of approaching testing (12)
 
- - Configuring Protractor (12)
+ - Configuring Protractor (13)
   - Protractor itself
   - Grunt task
 
-   - Filling in input field and clicking button
-   - Navigating to a new page
+ - Editing a page (14)
+  - HTML
+  - Page Code
+  - Control Code
+  - Test Script

@@ -5,15 +5,23 @@
     text-align: center;
 }
 
+.slide-6 {
+    &>figure {
+        display: inline-flex;
+        flex-direction: row;
+        margin: 0;
+    }
+}
+
 .slide-7 code {
     font-size: 28px;
 }
 
-.slide-8 code {
+.slide-9 code {
     font-size: 21px;
 }
 
-.slide-9 {
+.slide-10 {
     .service-async-code  code {
         font-size: 24px;
     }
@@ -21,4 +29,8 @@
     .code code {
         font-size: 23px;
     }
+}
+
+.slide-14 code {
+    font-size: 30px;
 }

@@ -52,11 +52,11 @@ angular.module('angular1xApp')
                 controller: 'Slide9Controller'
             })
             .when('/10', {
-                templateUrl: 'views/slide-10.html'
+                templateUrl: 'views/slide-10.html',
+                controller: 'Slide10Controller'
             })
             .when('/11', {
-                templateUrl: 'views/slide-11.html',
-                controller: 'Slide11Controller'
+                templateUrl: 'views/slide-11.html'
             })
             .when('/12', {
                 templateUrl: 'views/slide-12.html',

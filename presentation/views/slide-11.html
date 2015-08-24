@@ -1,35 +1,41 @@
 <div class="slide slide-11">
-    <h2>Putting a Service, Controller and Template together</h2>
+    <h1>E2E Testing: Manual vs Automated</h1>
     <hr>
-    <br>
-    <div class="example-slide">
-        <div class="left">
-            <div class="left">
-                <h2>Users</h2>
-                <ul ng-if="users.length > 0">
-                    <li ng-repeat="user in users track by user.id"><a ng-click="getUser(user.id)">({{user.id}})&nbsp;{{user.name}}</a></li>
+    <div style="float:left;">
+        <h2>Manual</h2>
+        <ol>
+            <li><h3>Launch your App yourself</h3></li>
+            <li>
+                <h3>Perform your Testing</h3>
+                <ul>
+                    <li><h4>Possibly documented</h4></li>
+                    <li><h4>All errors might be noticed</h4></li>
+                    <li><h4>Tests might be performed the same each time</h4></li>
                 </ul>
-                <div class="no-users" ng-if="users.length === 0">No users</div>
-            </div>
-            <div class="right">
-                <form name="userFrm" class="user-form" ng-submit="addUser()">
-                    <div class="user-data">
-                        <h4>ID:&nbsp;</h4>
-                        <input name="id" ng-model="user.id" required>
-                    </div>
-                    <div class="user-data">
-                        <h4>Name:&nbsp;</h4>
-                        <input name="name" ng-model="user.name" required>
-                    </div>
-                    <button type="submit" ng-disabled="userFrm.$error.required">Add User</button>
-                </form>
-            </div>
-        </div>
-        <div class="right code-container">
-            <pre>
-                <div hljs language="javascript" source="serviceTestCode" class="code"></div>
-            </pre>
-        </div>
-        <textarea ng-model="log"></textarea>
+            </li>
+            <li><h3>Note Bugs/Create Bug Reports</h3></li>
+            <li><h3>Fix bug(s) and update your codebase</h3></li>
+            <li>
+                <h3>Hope you tested the system fully</h3>
+                <ul><li><h4>But you might have missed something</h4></li></ul>
+            </li>
+            <li><h3>Return to Step 1</h3></li>
+        </ol>
+    </div>
+    <div style="float:right;">
+        <h2>Automated</h2>
+        <ol>
+            <li><h3>Setup Test Environment</h3></li>
+            <li><h3>Configure your test runner</h3></li>
+            <li><h3>Write Tests</h3></li>
+            <li><h3>Run Codified Tests</h3></li>
+            <li><h3>Note Bugs/Create Bug Reports</h3></li>
+            <li><h3>Fix bug(s) and update your codebase</h3></li>
+            <li>
+                <h3>Know you tested the system fully</h3>
+                <ul><li><h4>Because of Step 3!!!</h4></li></ul>
+            </li>
+            <li><h3>Return to Step 4</h3></li>
+        </ol>
     </div>
 </div>
